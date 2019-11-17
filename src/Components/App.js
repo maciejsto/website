@@ -1,18 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router , Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router , Route, Switch, Redirect} from 'react-router-dom';
+
 import logo from '../logo.svg';
 import '../App.css';
-import HomePage from '../Components/HomePage';
-import NavBar from '../Components/NavBar';
-import Footer from '../Components/Footer';
+import Header from '../Components/Header.js';
+import HomePage from '../Components/HomePage.js';
+import About from '../Components/About.js';
+import Services from '../Components/Services.js';
+import Contact from '../Components/Contact.js';
+import NavBar from './NavBar';
+import Footer from '../Components/Footer.js';
 
 class App extends React.Component {
   render() {
-//function App() {
   return (
     <Router>
-      <div className="App">
-        <NavBar/>
+      <div className="component">
+      <NavBar/>
+      <Header/>
+      <About/>
+      <Services/>
+      <Contact/>
+      <Footer/>
       </div>
     </Router>
   );
