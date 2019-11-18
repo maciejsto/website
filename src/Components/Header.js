@@ -5,7 +5,9 @@ import '../Components/Jumbotron.css';
 class Header extends Component {
     render() {
         return (
-          < Jumbotron title = "Welcome" subtitle="This is subtitle" />
+          <header class="bg-primary text-white">
+            < Jumbotron title = "Welcome" subtitle="This is subtitle" />
+          </header>
             );
     }
 }
