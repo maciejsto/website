@@ -10,6 +10,8 @@ import Services from '../Components/Services.js';
 import Contact from '../Components/Contact.js';
 import NavBar from './NavBar';
 import Footer from '../Components/Footer.js';
+import '../scrolling-nav.css';
+
 
 class App extends React.Component {
   render() {

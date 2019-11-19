@@ -3,7 +3,24 @@ import logo from '../logo.svg';
 import { Link, animateScroll as scroll } from "react-scroll";
 
 class NavBar extends Component {
+    constructor(props){
+      super(props);
+      this.toggleNavBar = this.toggleNavBar.bind(this);
+      this.state = {
+        collapsed: true,
+      };
+    }
+    toggleNavBar(){
+      this.setState({
+        collapsed: !this.state.collapsed,
+      });
+    }
     render(){
+        
+        const collapsed = this.state.collapsed;
+        const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
+        const classTwo = collapsed ? 'navbar-toggler collapsed' : 'navbar-toggler'; 
+        
         return (
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div className="container">
@@ -16,14 +33,15 @@ class NavBar extends Component {
                 offset={-70}
                 duration= {500} 
               >Welcome Page </Link>
-              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <button onClick={this.toggleNavBar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div className="container">
-                <div className="collapse navbar-collapse" id="navbarResponsive">
+                <div className={`${classOne}`} id="navbarResponsive">
                   <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                      <Link 
+                      <Link
+                        onClick={this.toggleNavBar} className={`${classTwo}`} 
                         className="nav-link js-scroll-trigger" 
                         to="about"
                         href="/onas"
@@ -34,7 +52,8 @@ class NavBar extends Component {
                       >O Nas</Link>
                     </li>
                     <li className="nav-item">
-                      <Link 
+                      <Link
+                        onClick={this.toggleNavBar} className={`${classTwo}`}  
                         className="nav-link js-scroll-trigger" 
                         to="services"
                         href="/uslugi"
@@ -45,7 +64,8 @@ class NavBar extends Component {
                       >Usługi</Link>
                     </li>
                     <li className="nav-item">
-                      <Link 
+                      <Link
+                        onClick={this.toggleNavBar} className={`${classTwo}`}  
                         className="nav-link js-scroll-trigger" 
                         to="contact"
                         href="/kontakt"
