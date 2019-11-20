@@ -24,15 +24,16 @@ class NavBar extends Component {
         return (
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div className="container">
-              <Link 
+              <Link
+                onClick={this.toggleNavBar} className={`${classTwo}`}  
                 className="navbar-brand js-scroll-trigger" 
                 to="homepage"
                 href="/homepage"
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-156}
                 duration= {500} 
-              >Welcome Page </Link>
+              >Psychoterapia w Brzesku i Bochni </Link>
               <button onClick={this.toggleNavBar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -50,6 +51,18 @@ class NavBar extends Component {
                         offset={-70}
                         duration= {500} 
                       >O Nas</Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        onClick={this.toggleNavBar} className={`${classTwo}`} 
+                        className="nav-link js-scroll-trigger" 
+                        to="therapy"
+                        href="/therapy"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration= {500} 
+                      >Czym jest psychoterapia?</Link>
                     </li>
                     <li className="nav-item">
                       <Link

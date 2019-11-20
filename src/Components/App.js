@@ -10,7 +10,9 @@ import Services from '../Components/Services.js';
 import Contact from '../Components/Contact.js';
 import NavBar from './NavBar';
 import Footer from '../Components/Footer.js';
+import Schowcase from '../Components/Showcase.js';
 import '../scrolling-nav.css';
+import Showcase from '../Components/Showcase.js';
 
 
 class App extends React.Component {
@@ -22,6 +24,7 @@ class App extends React.Component {
       <Header/>
       <About/>
       <Services/>
+      <Showcase/>
       <Contact/>
       <Footer/>
       </div>
